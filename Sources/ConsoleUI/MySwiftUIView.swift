@@ -9,7 +9,10 @@ import SwiftUI
 
 struct MySwiftUIView : View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/).color(.red)
+        ZStack {
+            Color.white.edgesIgnoringSafeArea(.all)
+            Text("Hello World!").color(.red).font(.largeTitle)
+        }
     }
 }
 
