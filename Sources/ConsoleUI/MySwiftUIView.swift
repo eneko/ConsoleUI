@@ -11,7 +11,7 @@ struct MySwiftUIView : View {
     var body: some View {
         ZStack {
             Color.white.edgesIgnoringSafeArea(.all)
-            Text("Hello World!").color(.red).font(.largeTitle)
+            Text("Hello, world!").color(.red).font(.largeTitle)
         }
     }
 }
