@@ -1,3 +1,5 @@
+
+
 # ConsoleUI
 
 Demo repository to showcase how to **programmatically generate images from a command-line tool with [SwiftUI](https://developer.apple.com/xcode/swiftui/)**.
@@ -15,7 +17,13 @@ $ swift run
 Hello, world!
 ```
 
-### Generate Xcode 11 project
+### Generate Xcode project (optional)
+
+Xcode does not support live previews on Swift packages yet (FB8979344). To allow for realtime previews follow these steps:
+
+1. Generate an Xcode project
+2. Add a macOS target to the project
+3. Add your view (see next section) to the macOS target
 
 ```
 $ swift package generate-xcodeproj
@@ -32,8 +40,10 @@ import SwiftUI
 struct MySwiftUIView : View {
     var body: some View {
         ZStack {
-            Color.white.edgesIgnoringSafeArea(.all)
-            Text("Hello, world!").color(.red).font(.largeTitle)
+            Color.blue.edgesIgnoringSafeArea(.all)
+            Text("Hello, world!")
+                .foregroundColor(.white)
+                .font(.largeTitle)
         }
     }
 }

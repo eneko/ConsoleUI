@@ -10,8 +10,10 @@ import SwiftUI
 struct MySwiftUIView : View {
     var body: some View {
         ZStack {
-            Color.white.edgesIgnoringSafeArea(.all)
-            Text("Hello, world!").color(.red).font(.largeTitle)
+            Color.blue.edgesIgnoringSafeArea(.all)
+            Text("Hello, world!")
+                .foregroundColor(.white)
+                .font(.largeTitle)
         }
     }
 }

@@ -3,11 +3,6 @@ import class Foundation.Bundle
 
 final class ConsoleUITests: XCTestCase {
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-
-        // Some of the APIs that we use below are available in macOS 10.13 and above.
         guard #available(macOS 10.13, *) else {
             return
         }
@@ -20,13 +15,12 @@ final class ConsoleUITests: XCTestCase {
         let pipe = Pipe()
         process.standardOutput = pipe
 
+        try? FileManager.default.removeItem(atPath: "test.png")
+
         try process.run()
         process.waitUntilExit()
 
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        let output = String(data: data, encoding: .utf8)
-
-        XCTAssertEqual(output, "Hello, world!\n")
+        XCTAssertTrue(FileManager.default.fileExists(atPath: "test.png"))
     }
 
     /// Returns path to the built products directory.
