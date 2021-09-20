@@ -12,7 +12,7 @@ func rasterize(view: NSView, format: NSBitmapImageRep.FileType) -> Data? {
 
 
 let wrapper = NSHostingView(rootView: MySwiftUIView())
-wrapper.frame = CGRect(x: 0, y: 0, width: 800, height: 450)
+wrapper.frame = CGRect(x: 0, y: 0, width: 1024, height: 1024)
 
 let png = rasterize(view: wrapper, format: .png)
 try png?.write(to: URL(fileURLWithPath: "test.png"))

@@ -10,8 +10,11 @@ let package = Package(
     products: [
         .executable(name: "consoleui", targets: ["ConsoleUI"])
     ],
+    dependencies: [
+        .package(url: "https://github.com/eneko/Stripes", from: "0.2.0")
+    ],
     targets: [
-        .target(name: "ConsoleUI", dependencies: []),
+        .target(name: "ConsoleUI", dependencies: ["Stripes"]),
         .testTarget(name: "ConsoleUITests", dependencies: ["ConsoleUI"])
     ]
 )
